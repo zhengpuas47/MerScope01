@@ -1,5 +1,6 @@
-## storm-control ##
+## the Sentinal, Package for MERFISH imaging ##
 This is a repository of code developed in the [Zhuang lab](http://zhuang.harvard.edu) and the [Babcock lab](https://hazenbabcock.github.io/) for the acquisition of STORM movies.
+modified by Pu Zheng
 
 [Discussion Group](https://groups.google.com/d/forum/storm-analysis)
 
@@ -7,7 +8,7 @@ Warning! There have been many changes and this software is now only compatible w
 
 ## Installation ##
 You will need Python3 and PyQt5 as well as a number of other libraries. Please see the Install.txt file in the hal4000 folder.
-
+s
 ## General notes ##
 1. This software is written primarily in Python with a few C helper libraries.
 
