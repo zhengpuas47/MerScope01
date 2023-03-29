@@ -4,3 +4,6 @@
 [submodule "storm_analysis"]
 	path = storm-analysis
 	url = git@github.com:ZhuangLab/storm-analysis.git
+[submodule "ChromAn"]
+	path = ChromAn
+	url = git@github.com:zhengpuas47/ChromAn.git
