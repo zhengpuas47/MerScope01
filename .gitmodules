@@ -1,3 +1,6 @@
 [submodule "storm-analysis"]
 	path = storm-analysis
 	url = https://github.com/ZhuangLab/storm-analysis.git
+[submodule "storm_analysis"]
+	path = storm-analysis
+	url = git@github.com:ZhuangLab/storm-analysis.git
