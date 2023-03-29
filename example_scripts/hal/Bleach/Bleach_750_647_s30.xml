@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<settings>
+  <!-- camera settings -->
+  <camera1>
+
+    <!-- actual Andor features -->
+    <exposure_time type="float">1.0</exposure_time>
+
+    <!-- view settings -->
+    <flip_horizontal type="int">0</flip_horizontal>
+    <flip_vertical type="int">1</flip_vertical>
+    <transpose type="int">0</transpose>
+    <scalemax type="int">655365</scalemax>
+    <scalemin type="int">20000</scalemin>
+    <max_intensity type="int">65536</max_intensity>
+    <colortable type="string">ramp_sat.ctbl</colortable>
+    <sync type="int">0</sync>
+  </camera1>
+
+  <!-- film settings -->
+  <film>
+    <filename type="string">bleach</filename> 
+    <acq_mode type="string">fixed_length</acq_mode>
+    <frames type="int">30</frames>
+    <logfile type="string">D:\Pu\logs\image_log.txt</logfile>
+    <auto_increment type="int">1</auto_increment>
+    <auto_shutters type="int">1</auto_shutters>
+    <want_bell type="int">1</want_bell>
+    <filetype type="string">.dax</filetype>
+  </film>
+  
+  <!-- illumination settings -->
+  <illumination>
+  	<default_power type="custom">0.7,0.7,0.0,0.0,0.0</default_power>
+  	<shutters type="string">shutter_bleach_750_647_s30.xml</shutters>
+    <on_off_state type="custom">False,False,False,False,False</on_off_state>
+    <power_buttons type="custom">[[['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.01]]]</power_buttons>
+  </illumination>
+
+  <!-- mosiac settings -->
+  <mosaic validate="False">
+    <flip_horizontal type="boolean">True</flip_horizontal>
+    <flip_vertical type="boolean">False</flip_vertical>
+    <obj1 type="custom">60x,0.108,0.0,0.0</obj1>
+    <obj2 type="custom">10x,0.66,0.0,0.0</obj2>
+    <objective type="string">obj1</objective>
+    <transpose type="boolean">True</transpose>
+  </mosaic>
+  <!-- focus lock settings -->
+  <focuslock>
+	<locked>
+      <buffer_length type="int">3</buffer_length>
+      <lock_gain type="float">0.1</lock_gain>
+      <lock_gain_max type="float">0.1</lock_gain_max>
+      <minimum_sum type="float">-1.0</minimum_sum>
+      <offset_threshold type="float">50.0</offset_threshold>
+    </locked>
+  	<hardware_z_scan>
+		<z_offsets type="string">0.0,0.4,0.8,1.2,1.6,2.0,2.4,2.8,3.2,3.6,4.0,4.4,4.8,5.2,5.6,6.0,6.4,6.8,7.2,7.6,8.0,8.4,8.8,9.2,9.6,10.0,10.4,10.8,11.2,11.6</z_offsets>
+	</hardware_z_scan>
+
+  </focuslock>
+  
+</settings>

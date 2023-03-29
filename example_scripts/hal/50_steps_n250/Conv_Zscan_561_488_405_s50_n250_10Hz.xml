@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<settings>
+  <!-- camera settings -->
+  <camera1>
+
+    <!-- actual Andor features -->
+    <exposure_time type="float">0.10</exposure_time>
+
+    <!-- view settings -->
+    <flip_horizontal type="int">0</flip_horizontal>
+    <flip_vertical type="int">0</flip_vertical>
+    <transpose type="int">0</transpose>
+    <scalemax type="int">20000</scalemax>
+    <scalemin type="int">200</scalemin>
+    <max_intensity type="int">65536</max_intensity>
+    <colortable type="string">ramp_sat.ctbl</colortable>
+    <sync type="int">0</sync>
+  </camera1>
+
+  <!-- film settings -->
+  <film>
+    <filename type="string">zscan_561_488_405_s50_n250</filename> 
+    <acq_mode type="string">fixed_length</acq_mode>
+    <frames type="int">150</frames>
+    <logfile type="string">D:\Pu\logs\image_log.txt</logfile>
+    <auto_increment type="int">1</auto_increment>
+    <auto_shutters type="int">1</auto_shutters>
+    <want_bell type="int">1</want_bell>
+    <filetype type="string">.dax</filetype>
+  </film>
+  
+  <!-- illumination settings -->
+  <illumination>
+  	<default_power type="custom">0.4,0.2,0.1,0.1,0.02</default_power>
+  	<shutters type="string">shutter_561_488_405_s50.xml</shutters>
+    <on_off_state type="custom">False,False,False,False,False</on_off_state>
+    <power_buttons type="custom">[[['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.01]]]</power_buttons>
+  </illumination>
+
+  <!-- focus lock settings -->
+  <focuslock>
+	<locked>
+      <buffer_length type="int">3</buffer_length>
+      <lock_gain type="float">0.1</lock_gain>
+      <lock_gain_max type="float">0.1</lock_gain_max>
+      <minimum_sum type="float">-1.0</minimum_sum>
+      <offset_threshold type="float">50.0</offset_threshold>
+    </locked>
+  	<hardware_z_scan>
+		<z_offsets type="string">0.0,0.0,0.0,0.25,0.25,0.25,0.5,0.5,0.5,0.75,0.75,0.75,1.0,1.0,1.0,1.25,1.25,1.25,1.5,1.5,1.5,1.75,1.75,1.75,2.0,2.0,2.0,2.25,2.25,2.25,2.5,2.5,2.5,2.75,2.75,2.75,3.0,3.0,3.0,3.25,3.25,3.25,3.5,3.5,3.5,3.75,3.75,3.75,4.0,4.0,4.0,4.25,4.25,4.25,4.5,4.5,4.5,4.75,4.75,4.75,5.0,5.0,5.0,5.25,5.25,5.25,5.5,5.5,5.5,5.75,5.75,5.75,6.0,6.0,6.0,6.25,6.25,6.25,6.5,6.5,6.5,6.75,6.75,6.75,7.0,7.0,7.0,7.25,7.25,7.25,7.5,7.5,7.5,7.75,7.75,7.75,8.0,8.0,8.0,8.25,8.25,8.25,8.5,8.5,8.5,8.75,8.75,8.75,9.0,9.0,9.0,9.25,9.25,9.25,9.5,9.5,9.5,9.75,9.75,9.75,10.0,10.0,10.0,10.25,10.25,10.25,10.5,10.5,10.5,10.75,10.75,10.75,11.0,11.0,11.0,11.25,11.25,11.25,11.5,11.5,11.5,11.75,11.75,11.75,12.0,12.0,12.0,12.25,12.25,12.25</z_offsets>
+	</hardware_z_scan>
+
+  </focuslock>
+  
+
+</settings>

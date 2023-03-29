@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<settings>
+  <!-- camera settings -->
+  <camera1>
+
+    <!-- actual Andor features -->
+    <exposure_time type="float">0.1</exposure_time>
+
+    <!-- view settings -->
+    <flip_horizontal type="int">0</flip_horizontal>
+    <flip_vertical type="int">1</flip_vertical>
+    <transpose type="int">0</transpose>
+    <scalemax type="int">10000</scalemax>
+    <scalemin type="int">100</scalemin>
+    <max_intensity type="int">65536</max_intensity>
+    <colortable type="string">ramp_sat.ctbl</colortable>
+    <sync type="int">0</sync>
+  </camera1>
+
+  <!-- film settings -->
+  <film>
+    <filename type="string">mosiac</filename> 
+    <acq_mode type="string">fixed_length</acq_mode>
+    <frames type="int">200</frames>
+    <logfile type="string">D:\Pu\logs\image_log.txt</logfile>
+    <auto_increment type="int">1</auto_increment>
+    <auto_shutters type="int">0</auto_shutters>
+    <want_bell type="int">1</want_bell>
+    <filetype type="string">.dax</filetype>
+  </film>
+  
+  <!-- illumination settings -->
+  <illumination>
+  	<default_power type="custom">0.3,0.5,0.3,0.2,0.05</default_power>
+  	<shutters type="string">C:\Users\neoSTORM6\Documents\STORM6\example_scripts\hal\50_steps_n200\shutter_750_647_488_405_s50.xml</shutters>
+    <on_off_state type="custom">False,False,False,False,False</on_off_state>
+    <power_buttons type="custom">[[['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.01]]]</power_buttons>
+  </illumination>
+
+  <!-- mosiac settings -->
+  <mosaic validate="False">
+    <flip_horizontal type="boolean">True</flip_horizontal>
+    <flip_vertical type="boolean">False</flip_vertical>
+    <obj1 type="custom">60x,0.108,0.0,0.0</obj1>
+    <obj2 type="custom">10x,0.67,0.0,0.0</obj2>
+    <objective type="string">obj2</objective>
+    <transpose type="boolean">True</transpose>
+  </mosaic>
+  <!-- focus lock settings -->
+  <focuslock>
+	<locked>
+      <buffer_length type="int">3</buffer_length>
+      <lock_gain type="float">0.1</lock_gain>
+      <lock_gain_max type="float">0.1</lock_gain_max>
+      <minimum_sum type="float">-1.0</minimum_sum>
+      <offset_threshold type="float">50.0</offset_threshold>
+    </locked>
+  	<hardware_z_scan>
+		<z_offsets type="string">0.0,0.0,0.0,0.0,0.2,0.2,0.2,0.2,0.4,0.4,0.4,0.4,0.6,0.6,0.6,0.6,0.8,0.8,0.8,0.8,1.0,1.0,1.0,1.0,1.2,1.2,1.2,1.2,1.4,1.4,1.4,1.4,1.6,1.6,1.6,1.6,1.8,1.8,1.8,1.8,2.0,2.0,2.0,2.0,2.2,2.2,2.2,2.2,2.4,2.4,2.4,2.4,2.6,2.6,2.6,2.6,2.8,2.8,2.8,2.8,3.0,3.0,3.0,3.0,3.2,3.2,3.2,3.2,3.4,3.4,3.4,3.4,3.6,3.6,3.6,3.6,3.8,3.8,3.8,3.8,4.0,4.0,4.0,4.0,4.2,4.2,4.2,4.2,4.4,4.4,4.4,4.4,4.6,4.6,4.6,4.6,4.8,4.8,4.8,4.8,5.0,5.0,5.0,5.0,5.2,5.2,5.2,5.2,5.4,5.4,5.4,5.4,5.6,5.6,5.6,5.6,5.8,5.8,5.8,5.8,6.0,6.0,6.0,6.0,6.2,6.2,6.2,6.2,6.4,6.4,6.4,6.4,6.6,6.6,6.6,6.6,6.8,6.8,6.8,6.8,7.0,7.0,7.0,7.0,7.2,7.2,7.2,7.2,7.4,7.4,7.4,7.4,7.6,7.6,7.6,7.6,7.8,7.8,7.8,7.8,8.0,8.0,8.0,8.0,8.2,8.2,8.2,8.2,8.4,8.4,8.4,8.4,8.6,8.6,8.6,8.6,8.8,8.8,8.8,8.8,9.0,9.0,9.0,9.0,9.2,9.2,9.2,9.2,9.4,9.4,9.4,9.4,9.6,9.6,9.6,9.6,9.8,9.8,9.8,9.8</z_offsets>
+	</hardware_z_scan>
+
+  </focuslock>
+  
+
+</settings>
