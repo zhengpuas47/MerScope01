@@ -12,18 +12,18 @@ import sys
 from setuptools import setup, find_packages
 
 
-version = "2.0"
-description = "STORM microscope control code."
+version = "2.1"
+description = "MERFISH microscope control and analysis code"
 long_description = ""
 
 setup(
-    name='storm_control',
+    name='Merscope',
     version=version,
     description=description,
     long_description=long_description,
-    author='Hazen Babcock',
-    author_email='hbabcock at fas.harvard.edu',
-    url='https://github.com/ZhuangLab/storm-control',
+    author='Pu Zheng',
+    author_email='puzheng at wi.mit.edu',
+    url='https://github.com/zhengpuas47/MerScope01',
 
     zip_safe=False,
     packages=find_packages(),
