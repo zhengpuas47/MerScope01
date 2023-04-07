@@ -7,3 +7,6 @@
 [submodule "ChromAn"]
 	path = ChromAn
 	url = git@github.com:zhengpuas47/ChromAn.git
+[submodule "MERlin"]
+	path = MERlin
+	url = git@github.com:zhengpuas47/MERlin.git
