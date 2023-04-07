@@ -1,6 +1,7 @@
-## the Sentinal, Package for MERFISH imaging ##
+## the MerScope, Package for MERFISH imaging ##
 This is a repository of code developed in the [Zhuang lab](http://zhuang.harvard.edu) and the [Babcock lab](https://hazenbabcock.github.io/) for the acquisition of STORM movies.
-modified by Pu Zheng
+
+Modified by Pu Zheng to match MERFISH and chromatin imaging in Weissman lab.
 
 [Discussion Group](https://groups.google.com/d/forum/storm-analysis)
 
@@ -15,5 +16,3 @@ s
 2. The software is provided "as is" in the hope that others might find it useful. While it is fairly stable and has been developed and used since 2009 in the Zhuang lab, we provide no guarantee that any future changes that are made will maintain backwards compatibility with older versions.
 
 3. We can only provide fairly limited support. You will probably have the most success adapting this software for your purposes if you are reasonably familiar with the Python programming language.
-
-4. Questions should be addressed to Hazen Babcock (hbabcock _at_ fas.harvard.edu).
