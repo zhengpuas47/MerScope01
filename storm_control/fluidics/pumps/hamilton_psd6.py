@@ -4,6 +4,8 @@
 # ----------------------------------------------------------------------------------------
 # George Emanuel
 # 6/28/19
+# Modified by Pu Zheng
+# 2023.06.18
 # ----------------------------------------------------------------------------------------
 
 import serial
@@ -11,7 +13,7 @@ import serial
 acknowledge = '\x06'
 start = '\x0A'
 stop = '\x0D'
-
+default_port = "COM3"
 
 # ----------------------------------------------------------------------------------------
 # HamiltonPSD6 Syringe Pump Class Definition
@@ -22,16 +24,16 @@ class APump():
         print('Initializing pump')
 
         # Define attributes
-        self.com_port = parameters.get("pump_com_port", "COM3")
+        self.com_port = parameters.get("pump_com_port", default_port)
         self.pump_ID = parameters.get("pump_ID", 30)
         self.verbose = parameters.get("verbose", True)
-        self.simulate = parameters.get("simulate_pump", True)
+        self.simulate = parameters.get("simulate_pump", False)
         self.serial_verbose = parameters.get("serial_verbose", False)
         self.flip_flow_direction = parameters.get("flip_flow_direction", False)
 
         # Create serial port
         self.serial = serial.Serial(
-            port=self.com_port, baudrate=9600, timeout=0.1)
+            port=self.com_port, baudrate=9600, timeout=0.25)
 
         # enable h commands
         self.sendString('/1h30001R\r')

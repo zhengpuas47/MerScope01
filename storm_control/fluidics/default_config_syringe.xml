@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<kilroy_configuration num_valves = "3" num_pumps = "1">
+  <valve_commands>
+    <valve_cmd name = "Set Hyb 1">
+      <valve_pos valve_ID = "1" port_ID = "1"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 2">
+      <valve_pos valve_ID = "1" port_ID = "2"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 3">
+      <valve_pos valve_ID = "1" port_ID = "3"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 4">
+      <valve_pos valve_ID = "1" port_ID = "4"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 5">
+      <valve_pos valve_ID = "1" port_ID = "5"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 6">
+      <valve_pos valve_ID = "1" port_ID = "6"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 7">
+      <valve_pos valve_ID = "1" port_ID = "7"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 8">
+      <valve_pos valve_ID = "1" port_ID = "8"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 9">
+      <valve_pos valve_ID = "1" port_ID = "9"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 10">
+      <valve_pos valve_ID = "1" port_ID = "10"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 11">
+      <valve_pos valve_ID = "1" port_ID = "11"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 12">
+      <valve_pos valve_ID = "1" port_ID = "12"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 13">
+      <valve_pos valve_ID = "1" port_ID = "13"></valve_pos>
+    </valve_cmd>    
+    <valve_cmd name = "Set Hyb 14">
+      <valve_pos valve_ID = "1" port_ID = "14"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 15">
+      <valve_pos valve_ID = "1" port_ID = "15"></valve_pos>
+    </valve_cmd>    
+    <valve_cmd name = "Set Hyb 16">
+      <valve_pos valve_ID = "1" port_ID = "16"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 17">
+      <valve_pos valve_ID = "1" port_ID = "17"></valve_pos>
+    </valve_cmd>   
+    <valve_cmd name = "Set Hyb 18">
+      <valve_pos valve_ID = "1" port_ID = "18"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 19">
+      <valve_pos valve_ID = "1" port_ID = "19"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 20">
+      <valve_pos valve_ID = "1" port_ID = "20"></valve_pos>
+    </valve_cmd>    
+    <valve_cmd name = "Set Hyb 21">
+      <valve_pos valve_ID = "1" port_ID = "21"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 22">
+      <valve_pos valve_ID = "1" port_ID = "22"></valve_pos>
+    </valve_cmd>   
+    <valve_cmd name = "Set Hyb 23">
+      <valve_pos valve_ID = "1" port_ID = "23"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Hyb 24">
+      <valve_pos valve_ID = "1" port_ID = "24"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set SSC">
+      <valve_pos valve_ID = "1" port_ID = "25"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set TCEP">
+      <valve_pos valve_ID = "1" port_ID = "26"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Wash">
+      <valve_pos valve_ID = "1" port_ID = "27"></valve_pos>
+    </valve_cmd>
+    <valve_cmd name = "Set Image">
+     <valve_pos valve_ID = "1" port_ID = "28"></valve_pos>
+    </valve_cmd>
+
+
+  </valve_commands>
+<!-- speed 200 ~= 1 mL / 10 sec -->
+  <pump_commands>
+     <pump_cmd name = "Flow 0.5mL">
+       <pump_config position = "500" speed = "30"></pump_config>
+     </pump_cmd>
+     <pump_cmd name = "Flow 1mL">
+       <pump_config position = "1000" speed = "30"></pump_config>
+     </pump_cmd>
+     <pump_cmd name = "Flow 2mL">
+       <pump_config position = "2000" speed = "30"></pump_config>
+     </pump_cmd>
+     <pump_cmd name = "Flow 4mL">
+       <pump_config position = "4000" speed = "30"></pump_config>
+     </pump_cmd>
+     <pump_cmd name = "Flow 5mL">
+       <pump_config position = "5000" speed = "30"></pump_config>
+     </pump_cmd>
+     <pump_cmd name = "Flow 6mL">
+       <pump_config position = "6000" speed = "30"></pump_config>
+     </pump_cmd>
+  </pump_commands>
+
+  <kilroy_protocols>
+     <protocol name = "Extra Wash">
+	<valve duration = "0">Flow Wash</valve>
+        <pump duration = "30">Normal Flow</pump>
+	<pump duration = "0">Stop Flow</pump>
+     </protocol>
+     <protocol name = "Hybridize 1">
+        <pump duration = "0">Normal Flow</pump>
+        <valve duration = "20">Set Hyb 1</valve>
+	<valve duration = "10">Flow Hybridization</valve>
+	<valve duration = "10">Flow Wash</valve>
+	<valve duration = "10">Flow STORM Buffer</valve>
+	<pump duration = "0">Stop Flow</pump>
+     </protocol>
+     <protocol name = "Hybridize 2">
+        <pump duration = "0">Normal Flow</pump>
+        <valve duration = "20">Set Hyb 2</valve>
+  <valve duration = "10">Flow Hybridization</valve>
+  <valve duration = "10">Flow Wash</valve>
+  <valve duration = "10">Flow STORM Buffer</valve>
+  <pump duration = "0">Stop Flow</pump>
+     </protocol>
+  <protocol name = "Cleanup">
+    <valve duration = "3">Set Hyb 1</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 2</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 3</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 4</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 5</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 6</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 7</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 8</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 9</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 10</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 11</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 12</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 13</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 14</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 15</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 16</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 17</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 18</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 19</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 20</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 21</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 22</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 23</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Hyb 24</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set SSC</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <pump duration = "60">Flow 5mL</pump>
+    <pump duration = "60">Flow 5mL</pump>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set TCEP</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <pump duration = "60">Flow 5mL</pump>
+    <pump duration = "60">Flow 5mL</pump>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Wash</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <pump duration = "60">Flow 5mL</pump>
+    <pump duration = "60">Flow 5mL</pump>
+    <pump duration = "60">Flow 5mL</pump>
+    <valve duration = "3">Set Image</valve>
+    <pump duration = "60">Flow 5mL</pump>
+    <pump duration = "60">Flow 5mL</pump>
+    <pump duration = "60">Flow 5mL</pump>
+    <pump duration = "60">Flow 5mL</pump>
+     </protocol>
+   </kilroy_protocols>
+</kilroy_configuration>

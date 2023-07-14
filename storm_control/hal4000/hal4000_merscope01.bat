@@ -1,4 +1,4 @@
 call conda activate halenv
-python kilroy.py kilroy_settings_storm6.xml
+python hal4000.py xml\merscope01_WI.xml
 call conda deactivate
 pause

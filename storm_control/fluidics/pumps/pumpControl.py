@@ -291,7 +291,9 @@ class PeristalticPumpControl(PumpControl):
     def updateStatus(self, status):
         # Pump identification
         self.pump_identification_label.setText(self.pump.identification)
-        
+        print(self.pump.getStatus())
+        print(status)
+
         # Flow status
         if status[0] == "Flowing":
             self.flow_status_display.setText(status[2])
