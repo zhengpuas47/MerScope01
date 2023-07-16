@@ -7,7 +7,7 @@
 
   <!-- Pump parameters -->
   <pump_class type="string">pumps.hamilton_psd6</pump_class><!-- Control class for pump -->
-  <pump_com_port type="string">COM5</pump_com_port><!-- COM port of serial connection to pump -->
+  <pump_com_port type="string">COM7</pump_com_port><!-- COM port of serial connection to pump -->
   <pump_ID type="int">30</pump_ID><!-- ID of Pump -->
   <simulate_pump type="boolean">False</simulate_pump><!-- Simulate pump? (Defaults to False) -->
   <flip_flow_direction type="boolean">False</flip_flow_direction><!-- Flip the direction defined as forward? -->

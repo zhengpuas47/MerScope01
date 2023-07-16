@@ -160,8 +160,8 @@
 		 rising (True) or falling (False) edge of the camera signal
 	-->
 	<timing>
-	  <camera_fire_pin type="string">/Dev4/PFI0</camera_fire_pin>
-	  <counter type="string">/Dev4/ctr0</counter>
+	  <camera_fire_pin type="string">/Dev1/PFI0</camera_fire_pin>
+	  <counter type="string">/Dev1/ctr0</counter>
 	  <rising_edge type="boolean">False</rising_edge>
 	</timing>
 
@@ -171,42 +171,49 @@
 
     <ilm750>
       <do_task>
-        <source type="string">/Dev4/port0/line5</source>
+        <source type="string">/Dev1/port0/line5</source>
       </do_task>
     </ilm750>
 
     <ilm647>
       <do_task>
-        <source type="string">/Dev4/port0/line4</source>
+        <source type="string">/Dev1/port0/line4</source>
       </do_task>      
     </ilm647>
 
 
     <ilm561>
       <do_task>
-        <source type="string">/Dev4/port0/line3</source>
+        <source type="string">/Dev1/port0/line3</source>
       </do_task>
     </ilm561>
 
 
     <ilm488>
       <do_task>
-        <source type="string">/Dev4/port0/line2</source>
+        <source type="string">/Dev1/port0/line2</source>
       </do_task>
     </ilm488>
 
     <ilm405>
       <do_task>
-        <source type="string">/Dev4/port0/line1</source>
+        <source type="string">/Dev1/port0/line1</source>
       </do_task>
     </ilm405>    
     
-	<mcl>
-	  <ao_task>
-	    <source type="string">/Dev4/ao0</source>
-	  </ao_task>
-	</mcl>
-    
+    <mcl>
+      <ao_task>
+        <source type="string">/Dev1/ao0</source>
+      </ao_task>
+    </mcl>
+
+    <ir_laser>
+      <ct_task>
+        <source type="string">/Dev1/ctr0</source>
+        <frequency type="float">50000</frequency>
+      </ct_task>
+    </ir_laser>
+
       </configuration>
       
     </daq>
@@ -331,19 +338,12 @@
       </configuration>
     </Lumencor750> 
 
-    <!-- Decided on no IR control -->
-     <none_irlaser>
-      <module_name type="string">storm_control.sc_hardware.none.noneIRLaserModule</module_name>
-      <class_name type="string">NoneIRLaserModule</class_name>
-    </none_irlaser>
-    
     <!-- Ludl stage, COM port: COM6 2021/06/16-->
     <ludl_stage>
       <module_name type="string">storm_control.sc_hardware.ludl.ludlModule</module_name>
       <class_name type="string">LudlStageRS232</class_name>
-      
       <configuration>	
-	<com_port type="string">COM12</com_port> 
+	    <com_port type="string">COM12</com_port> 
       </configuration>
     </ludl_stage>   
 
@@ -351,18 +351,17 @@
     <mcl_zstage>
       <module_name type="string">storm_control.sc_hardware.ludl.ludlVoltageZModule</module_name>
       <class_name type="string">LudlVoltageZ</class_name>
-
       <configuration>
-	<parameters>
-	  <center type="float">150.0</center>
-	  <has_center_bar type="boolean">True</has_center_bar>
-	  <maximum type="float">350.0</maximum>
-	  <minimum type="float">0.0</minimum>
-	  <warning_high type="float">315.0</warning_high>
-	  <warning_low type="float">35.0</warning_low>
-	</parameters>
-	<ao_fn_name type="string">daq.mcl.ao_task</ao_fn_name>
-	<microns_to_volts type="float">0.0286</microns_to_volts> <!-- Calculated by 10V / 350um -->
+        <parameters>
+          <center type="float">150.0</center>
+          <has_center_bar type="boolean">True</has_center_bar>
+          <maximum type="float">350.0</maximum>
+          <minimum type="float">0.0</minimum>
+          <warning_high type="float">315.0</warning_high>
+          <warning_low type="float">35.0</warning_low>
+        </parameters>
+        <ao_fn_name type="string">daq.mcl.ao_task</ao_fn_name>
+        <microns_to_volts type="float">0.0286</microns_to_volts> <!-- Calculated by 10V / 350um -->
       </configuration>
     </mcl_zstage>
 
@@ -394,10 +393,10 @@
 	<background type="int">32000</background>
 	<camera_id type="int">1</camera_id>
 	<ini_file type="string">uc480_settings.ini</ini_file>
-	<offset_file type="string">..\data\cam_offsets_storm6.txt</offset_file>
+	<offset_file type="string">C:\Softwares\Github\MerScope01\storm_control\hal4000\data\cam_offsets_merscope01.txt</offset_file>
 	<pixel_clock type="int">25</pixel_clock>
     <sigma type="float">4.0</sigma> <!-- changed this sigma from 3.0 to 4.0 to better fit and visualize IR spots -->
-	<uc480_dll type="string">C:\Windows\SysWOW64\uc480_64.dll</uc480_dll>
+	<uc480_dll type="string">C:\Program Files\Thorlabs\Scientific Imaging\DCx Camera Support\OtherDrivers\LabVIEW\For_64-bit_LabVIEW\uc480_64.dll</uc480_dll>
 	<x_width type="int">320</x_width>
 	<y_width type="int">80</y_width>
 	<units_to_microns type="float">-0.03</units_to_microns> <!-- changed to -0.025 according to Aaron's suggestion -->
@@ -406,54 +405,52 @@
       </configuration>
     </uc480_camera>
 
-      <!-- Focus lock control GUI. -->
-    <focuslock>
-      <class_name type="string">FocusLock</class_name>
-      <module_name type="string">storm_control.hal4000.focusLock.focusLock</module_name>
-      <configuration>
-    <ir_laser type="string">ldc_irlaser</ir_laser>
-    <ir_power type="int">10</ir_power>
-    <lock_modes type="string">NoLockMode,AutoLockMode,AlwaysOnLockMode,OptimalLockMode,CalibrationLockMode,HardwareZScanLockMode</lock_modes>
-    <qpd type="string">uc480_camera</qpd>
-    <z_stage type="string">mcl_zstage</z_stage>
-    <!--<z_stage type="string">none_zstage</z_stage>-->
-	<parameters>
-	  <find_sum>
-	    <step_size type="float">0.25</step_size>
-	  </find_sum>
-	  <locked>
-	    <buffer_length type="int">5</buffer_length>
-	    <offset_threshold type="float">3000.0</offset_threshold>
-	  </locked>
-	  <scan>
+  <!-- Focus lock control GUI. -->
+  <focuslock>
+    <class_name type="string">FocusLock</class_name>
+    <module_name type="string">storm_control.hal4000.focusLock.focusLock</module_name>
+    <configuration>
+      <ir_laser type="string">ldc_irlaser</ir_laser>
+      <ir_power type="int">10</ir_power>
+      <lock_modes type="string">NoLockMode,AutoLockMode,AlwaysOnLockMode,OptimalLockMode,CalibrationLockMode,HardwareZScanLockMode</lock_modes>
+      <qpd type="string">uc480_camera</qpd>
+      <z_stage type="string">mcl_zstage</z_stage>
+      <!--<z_stage type="string">none_zstage</z_stage>-->
+      <parameters>
+        <find_sum>
+        <step_size type="float">0.25</step_size>
+        </find_sum>
+        <locked>
+        <buffer_length type="int">5</buffer_length>
+        <offset_threshold type="float">3000.0</offset_threshold>
+        </locked>
+        <scan>
         <minimum_sum type="float">20000</minimum_sum>
         <scan_step type="float">0.2</scan_step>
-	    <offset_threshold type="float">100.0</offset_threshold>
-      </scan>
-	  <jump_size type="float">0.1</jump_size>
-	</parameters>
-      </configuration>
-    </focuslock>
-
-    <!-- TCP control -->
-    <tcp_control>
-      <module_name type="string">storm_control.hal4000.tcpControl.tcpControl</module_name>
-      <class_name type="string">TCPControl</class_name>        
-      <configuration>
-    <parallel_mode type="boolean">True</parallel_mode>
-    <tcp_port type="int">9000</tcp_port>
-      </configuration>
-    </tcp_control>
+        <offset_threshold type="float">100.0</offset_threshold>
+        </scan>
+        <jump_size type="float">0.1</jump_size>
+      </parameters>
+    </configuration>
+  </focuslock>
 
 	<!-- Thorlabs LDC control -->
     <ldc_irlaser>
       <module_name type="string">storm_control.sc_hardware.thorlabs.LDCModule</module_name>
       <class_name type="string">LDCIRLaserModule</class_name>
-
       <configuration>
-	<ct_fn_name type="string">daq.ir_laser.ct_task</ct_fn_name>
+	      <ct_fn_name type="string">daq.ir_laser.ct_task</ct_fn_name>
       </configuration>
     </ldc_irlaser>
+    <!-- TCP control -->
+    <tcp_control>
+      <module_name type="string">storm_control.hal4000.tcpControl.tcpControl</module_name>
+      <class_name type="string">TCPControl</class_name>        
+      <configuration>
+        <parallel_mode type="boolean">True</parallel_mode>
+        <tcp_port type="int">9000</tcp_port>
+      </configuration>
+    </tcp_control>
 
 
   </modules>

@@ -11,7 +11,7 @@ import os
 import sys
 import re
 import sys
-sys.path.append(r"..\..\..\STORM6")
+sys.path.append(r"..\..")
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 # Debugging

@@ -8,7 +8,8 @@ Hazen 11/17
 import numpy
 import tifffile
 import sys
-sys.path.append(r'../../../../STORM6/storm-analysis')
+sys.path.append(r'../..')
+
 import storm_analysis.sa_library.dao_fit_c as daoFitC
 import storm_analysis.sa_library.fitting as fitting
 import storm_analysis.sa_library.ia_utilities_c as iaUtilsC

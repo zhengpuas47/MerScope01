@@ -705,7 +705,7 @@ if (__name__ == "__main__"):
 
     from PIL import Image
 
-    loadDLL("C:/Windows/SysWOW64/uc480_64.dll")
+    loadDLL("uc480_64.dll")
 
     cam = Camera(1)
     reps = 1000
@@ -720,7 +720,7 @@ if (__name__ == "__main__"):
             print(" stop")
 
         im = Image.fromarray(image)
-        im.save("C:\storm-control\storm_control\sc_hardware\thorlabs\temp.png")
+        im.save(r"E:\Data\logs\UC480_temp.png")
 
     if False:
         cam.setAOI(100, 100, 300, 300)

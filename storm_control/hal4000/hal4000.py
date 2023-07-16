@@ -25,7 +25,7 @@ import os
 import signal
 import time
 import sys
-sys.path.append(r"..\..\..\STORM6")
+sys.path.append(r"..\..")
 import storm_control
 
 

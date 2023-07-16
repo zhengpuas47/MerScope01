@@ -154,7 +154,7 @@ class StageFunctionalityNF(StageFunctionality):
         time_estimate = self.calculateMoveTime(dx, dy)
 
         # Set interval and start the timer.
-        self.moving_timer.setInterval(time_estimate * 1.0e+3)
+        self.moving_timer.setInterval(int(time_estimate * 1.0e+3))
         self.moving_timer.start()
 
         # Pretend we already got there..

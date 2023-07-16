@@ -103,7 +103,8 @@ class LudlRS232(Ludl):
     """
     Encapsulates control of a XY Ludl stage, communicating through serial.
     """
-    def __init__(self, port="COM19", timeout = None, baudrate = 115200, wait_time = 0.02, **kwds):
+    # Baudrate changed to 9600
+    def __init__(self, port="COM12", timeout = None, baudrate = 9600, wait_time = 0.02, **kwds):
         super().__init__(**kwds)
 
         import storm_control.sc_hardware.serial.RS232 as RS232
