@@ -122,7 +122,7 @@ class LumencorLaser(object):
         else:
             self.message = lumencor_httpcommand(command = 'SET CH '+self.laser_id+' 0', ip=self.ip)
             self.on = False
-        print("Turning On/Off", self.on, self.message)
+        #print("Turning On/Off", self.on, self.message)
     def setPower(self, power_in_mw):
         """
         power_in_mw - The desired laser power in mW.
