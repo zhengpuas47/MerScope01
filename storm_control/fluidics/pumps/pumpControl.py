@@ -194,10 +194,10 @@ class SyringePumpControl(PumpControl):
         self.pollPumpStatus()
 
     def receiveCommand(self, command):
-        print(command)
+        print("Pump command:", command)
         self.pump.setSyringePosition(
             int(command[0]), 'Input', int(command[1]), True)
-
+        
 # ----------------------------------------------------------------------------------------
 # PeristalticPumpControl Class Definition
 # ----------------------------------------------------------------------------------------
@@ -291,8 +291,7 @@ class PeristalticPumpControl(PumpControl):
     def updateStatus(self, status):
         # Pump identification
         self.pump_identification_label.setText(self.pump.identification)
-        print(self.pump.getStatus())
-        print(status)
+        print(self.pump.getStatus(), status)
 
         # Flow status
         if status[0] == "Flowing":
