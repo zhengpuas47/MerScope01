@@ -429,24 +429,25 @@
     <configuration>
     <parameters>
       <offset_has_center_bar type="boolean">True</offset_has_center_bar>
-      <offset_maximum type="float">1.5</offset_maximum>
-      <offset_minimum type="float">0.2</offset_minimum>
-      <offset_warning_high type="float">1.45</offset_warning_high>
-      <offset_warning_low type="float">0.25</offset_warning_low>	  
-      <sum_maximum type="float">240000.0</sum_maximum>
-      <sum_warning_low type="float">10000.0</sum_warning_low>
+      <offset_maximum type="float">5.7</offset_maximum>
+      <offset_minimum type="float">1.7</offset_minimum>
+      <offset_warning_high type="float">4.7</offset_warning_high>
+      <offset_warning_low type="float">2.7</offset_warning_low>	  
+      <sum_maximum type="float">300000.0</sum_maximum>
+      <sum_warning_low type="float">60000.0</sum_warning_low>
       <sum_minimum type="float">0.0</sum_minimum>
     </parameters>
-    <background type="int">32000</background>
+    <background type="int">35000</background>
     <camera_id type="int">1</camera_id>
     <ini_file type="string">uc480_settings_new.ini</ini_file>
     <!-- Offset file to mark the center of region of interest-->
+    <!-- new version for scientific camera: this markes the top left of the selected region-->
     <offset_file type="string">C:\Softwares\Github\MerScope01\storm_control\hal4000\data\cam_offsets_merscope01.txt</offset_file>
     <pixel_clock type="int">25</pixel_clock>
       <sigma type="float">4.0</sigma> <!-- changed this sigma from 3.0 to 4.0 to better fit and visualize IR spots -->
     <uc480_dll type="string">C:\Program Files\Thorlabs\Scientific Imaging\DCx Camera Support\USB Driver Package\uc480_64.dll</uc480_dll>
-    <x_width type="int">1000</x_width>
-    <y_width type="int">800</y_width>
+    <x_width type="int">400</x_width>
+    <y_width type="int">180</y_width>
     <units_to_microns type="float">-0.03</units_to_microns> <!-- changed to -0.025 according to Aaron's suggestion -->
     <!-- a minus sign is needed for proper feedback control, this converts lock poition into positive float -->
     <use_storm_analysis type="boolean">True</use_storm_analysis>
