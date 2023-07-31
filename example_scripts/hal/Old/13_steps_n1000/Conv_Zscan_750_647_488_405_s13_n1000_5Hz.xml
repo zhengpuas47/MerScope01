@@ -22,7 +22,7 @@
     <filename type="string">zscan_750_647_488_405_s13_n1000</filename> 
     <acq_mode type="string">fixed_length</acq_mode>
     <frames type="int">52</frames>
-    <logfile type="string">D:\Pu\logs\image_log.txt</logfile>
+    <logfile type="string">E:\Data\logs\image_log.txt</logfile>
     <auto_increment type="int">1</auto_increment>
     <auto_shutters type="int">1</auto_shutters>
     <want_bell type="int">1</want_bell>
@@ -31,10 +31,10 @@
   
   <!-- illumination settings -->
   <illumination>
-  	<default_power type="custom">0.6,0.35,0.0,0.1,0.04</default_power>
+  	<default_power type="custom">0.6,0.35,0.0,0.0,0.1,0.0,0.04</default_power>
   	<shutters type="string">shutter_750_647_488_405_s13.xml</shutters>
-    <on_off_state type="custom">False,False,False,False,False</on_off_state>
-    <power_buttons type="custom">[[['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.01]]]</power_buttons>
+    <on_off_state type="custom">False,False,False,False,False,False,False</on_off_state>
+    <power_buttons type="custom">[[['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]], [['Max', 1.0], ['Low', 0.1]]]</power_buttons>
   </illumination>
 
   <!-- focus lock settings -->
