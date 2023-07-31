@@ -38,8 +38,8 @@ class Objective(QtCore.QObject):
             
             # Microns per pixel.
             sbox = ObjDoubleSpinBox(float(data[1]), 0.01, 100.0, parent)
-            sbox.setDecimals(2)
-            sbox.setSingleStep(0.01)
+            sbox.setDecimals(3)
+            sbox.setSingleStep(0.001)
             sbox.valueChanged.connect(self.handleMagChanged)
             self.qt_widgets.append(sbox)
 
