@@ -84,3 +84,5 @@ proguard/
 # Metadata
 .metadata
 
+# jupyter checkpoint
+*.ipynb_checkpoints
