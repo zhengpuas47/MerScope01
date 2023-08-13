@@ -172,6 +172,8 @@ class Kilroy(QtWidgets.QMainWindow):
     # ----------------------------------------------------------------------------------------
     def sendCommand(self):
         command_data = self.kilroyProtocols.getCurrentCommand()
+        print("**", command_data)
+
         if command_data[0] == "valve":
             self.valveChain.receiveCommand(command_data[1])
         elif command_data[0] == "pump":

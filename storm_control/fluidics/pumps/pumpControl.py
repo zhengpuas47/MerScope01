@@ -108,6 +108,7 @@ class SyringePumpControl(PumpControl):
         self.direction_control = QtWidgets.QComboBox()
         self.direction_control.addItem("Input")
         self.direction_control.addItem("Output")
+        self.direction_control.addItem("Bypass")
 
         self.position_control_label = QtWidgets.QLabel()
         self.position_control_label.setText("Set Syringe Position")
@@ -118,6 +119,10 @@ class SyringePumpControl(PumpControl):
         self.start_flow_button = QtWidgets.QPushButton()
         self.start_flow_button.setText("Move Syringe")
         self.start_flow_button.clicked.connect(self.handleMoveSyringe)
+
+        self.push_button = QtWidgets.QPushButton()
+        self.push_button.setText("Push Syringe")
+        self.push_button.clicked.connect(self.handlePushSyringe)
 
         self.empty_button = QtWidgets.QPushButton()
         self.empty_button.setText("Empty Syringe")
@@ -136,6 +141,7 @@ class SyringePumpControl(PumpControl):
         self.mainWidgetLayout.addWidget(self.speed_control_label)
         self.mainWidgetLayout.addWidget(self.speed_control_entry_box)
         self.mainWidgetLayout.addWidget(self.start_flow_button)
+        self.mainWidgetLayout.addWidget(self.push_button)
         self.mainWidgetLayout.addWidget(self.empty_button)
         self.mainWidgetLayout.addWidget(self.stop_button)
         self.mainWidgetLayout.addStretch(1)
@@ -178,10 +184,15 @@ class SyringePumpControl(PumpControl):
         self.pump.setSyringePosition(
             int(self.position_control_entry_box.displayText()),
             self.direction_control.currentText(),
-            int(self.speed_control_entry_box.displayText()))
+            int(self.speed_control_entry_box.displayText()), 
+            emptyFirst=False)
+        time.sleep(0.1)
+        self.pollPumpStatus()
 
-        #time.sleep(0.1)
-        #self.pollPumpStatus()
+    def handlePushSyringe(self):
+        self.pump.PushSyringe()
+        time.sleep(0.1)
+        self.pollPumpStatus()
 
     def handleEmptySyringe(self):
         self.pump.emptySyringe()
@@ -193,10 +204,10 @@ class SyringePumpControl(PumpControl):
         time.sleep(0.1)
         self.pollPumpStatus()
 
-    def receiveCommand(self, command):
+    def receiveCommand(self, command, emptySyringe=False):
         print("Pump command:", command)
         self.pump.setSyringePosition(
-            int(command[0]), 'Input', int(command[1]), True)
+            int(command[0]), command[2], int(command[1]), emptySyringe) # add command[2] as direction
         
 # ----------------------------------------------------------------------------------------
 # PeristalticPumpControl Class Definition

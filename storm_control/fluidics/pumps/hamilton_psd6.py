@@ -9,11 +9,18 @@
 # ----------------------------------------------------------------------------------------
 
 import serial
+import time
 
 acknowledge = '\x06'
 start = '\x0A'
 stop = '\x0D'
-default_port = "COM3"
+default_port = "COM7" # specific in MerScope01
+# Change to 8-port valve head on PSD6, therefore requires expicit:
+default_input_valve = 1
+default_output_valve = 2
+default_bypass_valve = 3
+
+
 
 # ----------------------------------------------------------------------------------------
 # HamiltonPSD6 Syringe Pump Class Definition
@@ -30,17 +37,26 @@ class APump():
         self.simulate = parameters.get("simulate_pump", False)
         self.serial_verbose = parameters.get("serial_verbose", False)
         self.flip_flow_direction = parameters.get("flip_flow_direction", False)
+        # Valve Ports
+        self.input_valve = parameters.get("input_valve", default_input_valve)
+        self.output_valve = parameters.get("output_valve", default_output_valve)   
+        self.bypass_valve = parameters.get("bypass_valve", default_bypass_valve)   
 
         # Create serial port
         self.serial = serial.Serial(
             port=self.com_port, baudrate=9600, timeout=0.25)
 
         # enable h commands
-        self.sendString('/1h30001R\r')
-
-        # TODO Confirm that this initialization only pushes to waste
-        self.sendString('/1OZ1R\r')
-
+        self.sendString('/1h30001R\r') # Enable factor commands
+        # initialize valves
+        self.sendString('/1h20000R\r') # Initialize Valve
+        self.sendString('/1h20001R\r') # Enable Valve Movement
+        # Confirm that this initialization only pushes to waste
+        self.sendString(f'/1h2400{self.bypass_valve}R\r')
+        # initialize syringe
+        self.sendString('/1h10010R\r') # initialize syringe
+        # flush buffer
+        self.serial.readlines()
         # Define initial pump status
         self.flow_status = "Stopped"
         self.speed = 30
@@ -65,35 +81,13 @@ class APump():
             0: 'Moving',
             1: 'Input',
             2: 'Output',
-            3: 'Wash',
-            4: 'Return',
-            5: 'Bypass',
-            6: 'Extra'
+            3: 'Bypass',
         }
-        return positionDict[int(self.sendString('/1?23000\r').decode()
+        return positionDict[int(self.sendString('/1?24000R\r').decode()
                                 .split('`')[1].split('\x03')[0])]
 
     def getStatus(self):
         return (self.getPumpPosition(), self.getValvePosition())
-
-        message = self.readDisplay()
-
-        if self.flip_flow_direction:
-            direction = {" ": "Not Running", "-": "Forward", "+": "Reverse"}. \
-                get(message[0], "Unknown")
-        else:
-            direction = {" ": "Not Running", "+": "Forward", "-": "Reverse"}. \
-                get(message[0], "Unknown")
-
-        status = "Stopped" if direction == "Not Running" else "Flowing"
-
-        control = {"K": "Keypad", "R": "Remote"}.get(message[-1], "Unknown")
-
-        auto_start = "Disabled"
-
-        speed = float(message[1:len(message) - 1])
-
-        return (status, self.getPumpPosition(), direction, control, auto_start, "No Error")
 
     def close(self):
         pass
@@ -101,36 +95,53 @@ class APump():
     def setValvePosition(self, valvePosition):
         # valve position is either 'input' or 'output'
         if valvePosition == 'Input':
-            self.sendString('/1IR\r')
+            #self.sendString('/1IR\r')
+            valveOutput = self.sendString(f'/1h2400{self.input_valve}R\r') # input is at 135
         elif valvePosition == 'Output':
-            self.sendString('/1OR\r')
-
-    def setSyringePosition(self, position, valvePosition=None, speed=50,
-                           emptyFirst=False):
+            #self.sendString('/1OR\r')
+            valveOutput = self.sendString(f'/1h2400{self.output_valve}R\r') # output is at 180
+        elif valvePosition == 'Bypass':
+            #self.sendString('/1OR\r')
+            valveOutput = self.sendString(f'/1h2400{self.bypass_valve}R\r') # bypass is at 270
+        return valveOutput
+    
+    def setSyringePosition(self, 
+                           position, 
+                           valvePosition=None, 
+                           speed=50,
+                           emptyFirst=False
+                           ):
         commandString = '/1'
 
         if emptyFirst:
-            commandString += f'OV{int(speed)}A0' # empty speed to 50
+            commandString += f'h2400{self.bypass_valve}V{int(speed)}A0' # empty speed to 50
 
         if valvePosition is not None:
             if valvePosition == 'Input':
-                commandString += 'I'
+                commandString += f'h2400{self.input_valve}'
+            elif valvePosition == 'Bypass':
+                commandString += f'h2400{self.bypass_valve}'
             else:
-                commandString += 'O'
+                commandString += f'h2400{self.output_valve}'
 
         commandString += 'V' + str(int(speed))
         commandString += 'A' + str(int(position))
-
+        # send command
         self.sendString(commandString + 'R\r')
+        return
 
-    def emptySyringe(self):
-        self.sendString('/1OV50A0R\r') # changed ejection speed to 50
+    # Function to eject liquid into chamber:
+    def PushSyringe(self, speed=50): 
+        self.sendString(f'/1h2400{self.output_valve}V{int(speed)}A0R\r')
+
+    def emptySyringe(self, speed=50):
+        self.sendString(f'/1h2400{self.bypass_valve}V{int(speed)}A0R\r')
 
     def stopSyringe(self):
         self.sendString('/1TR\r')
 
     def resetSyringe(self):
-        self.sendString('/1OZ1R\r')
+        self.sendString('/1h30002R\r')
 
     def setSpeed(self, speed):
         if 2 <= speed <= 5800:

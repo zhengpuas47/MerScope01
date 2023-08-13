@@ -29,7 +29,7 @@ class PumpCommands(QtWidgets.QMainWindow):
     def __init__(self,
                  xml_file_path="default_config.xml",
                  verbose = False,
-                 pumpType = 'peristaltic'):
+                 pumpType = 'syringe'):
         super(PumpCommands, self).__init__()
 
         # Initialize internal attributes
@@ -193,7 +193,10 @@ class PumpCommands(QtWidgets.QMainWindow):
                     for pump_config in command.findall("pump_config"):
                         position = int(pump_config.get('position'))
                         speed = int(pump_config.get('speed'))
-                    self.commands.append([position, speed])
+                        # add direction
+                        direction = pump_config.get("direction", "Input")
+                        direction = {"Input": "Input", "Output": "Output", "Bypass":"Bypass"}.get(direction, "Input")
+                    self.commands.append([position, speed, direction])
                     self.command_names.append(command.get('name'))
 
         # Record number of configs
@@ -215,8 +218,10 @@ class PumpCommands(QtWidgets.QMainWindow):
             elif self.pumpType == 'syringe':
                 position = self.commands[command_ID][0]
                 speed = self.commands[command_ID][1]
+                direction = self.commands[command_ID][2]
                 text_string = "    " + "Position: " + str(position) + "\n"
                 text_string += "    " + "Speed: " + str(speed) +"\n"
+                text_string += f"    Direction: {direction}\n"
                 print(text_string)
 
     # ------------------------------------------------------------------------------------
@@ -255,6 +260,7 @@ class PumpCommands(QtWidgets.QMainWindow):
         elif self.pumpType == 'syringe':
             text_string += "Targe position: " + str(current_command[0]) + "\n"
             text_string += "Speed: " + str(current_command[1]) + "\n"
+            text_string += "Direction: " + str(current_command[2]) + "\n"
         self.currentCommandLabel.setText(text_string)
 
     # ------------------------------------------------------------------------------------
