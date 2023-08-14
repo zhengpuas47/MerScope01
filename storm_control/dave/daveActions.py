@@ -603,7 +603,7 @@ class DALightEngineWakeup(DaveAction):
         
         # Create message and add delay time for accurate dave time estimates
         self.message = tcpMessage.TCPMessage(message_type = "Delay",
-                                             message_data = {"delay": self.delay});
+                                             message_data = {"delay": self.delay})
         self.message.addResponse("duration", self.delay)
 
     ## start
@@ -622,7 +622,7 @@ class DALightEngineWakeup(DaveAction):
             # wake up lasers
             lumencor_httpcommand(command = 'WAKEUP')
             # Necessary command for STORM6 hal control after stanby
-            lumencor_httpcommand(command = 'SET TTLENABLE 1')
+            #lumencor_httpcommand(command = 'SET TTLENABLE 1')
             self.delay_timer.start(self.delay)
             print("Delaying " + str(self.delay) + " ms")
 

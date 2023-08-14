@@ -79,6 +79,7 @@ class XMLRecipeParser(QtWidgets.QWidget):
                                  daveActions.DASetProgression(),
                                  daveActions.DASetDirectory(),
                                  daveActions.DADelay(),
+                                 daveActions.DALightEngineWakeup(),
                                  daveActions.DAPause(),
                                  daveActions.DATakeMovie()]
 
@@ -155,6 +156,11 @@ class XMLRecipeParser(QtWidgets.QWidget):
                 new_node = daveActions.DACopyFolders().createETree(dict_)
                 if new_node is not None:
                     primitives_xml.append(new_node)
+            elif child.tag == 'wakeup': # Handle <wakeup> tag
+                new_node = daveActions.DALightEngineWakeup().createETree({"wakeup": child.text})
+                if new_node is not None:
+                    primitives_xml.append(new_node)
+
             else:
                 pass
                 ## Eventually display an unknown tag error. For now ignore
