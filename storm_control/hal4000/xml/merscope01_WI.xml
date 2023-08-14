@@ -429,10 +429,10 @@
     <configuration>
     <parameters>
       <offset_has_center_bar type="boolean">True</offset_has_center_bar>
-      <offset_maximum type="float">4</offset_maximum>
-      <offset_minimum type="float">0</offset_minimum>
-      <offset_warning_high type="float">3.5</offset_warning_high>
-      <offset_warning_low type="float">0.5</offset_warning_low>	  
+      <offset_maximum type="float">4.7</offset_maximum>
+      <offset_minimum type="float">0.7</offset_minimum>
+      <offset_warning_high type="float">3.9</offset_warning_high>
+      <offset_warning_low type="float">1.5</offset_warning_low>	  
       <sum_maximum type="float">300000.0</sum_maximum>
       <sum_warning_low type="float">60000.0</sum_warning_low>
       <sum_minimum type="float">0.0</sum_minimum>
