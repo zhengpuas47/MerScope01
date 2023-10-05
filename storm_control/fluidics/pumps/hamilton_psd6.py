@@ -52,9 +52,12 @@ class APump():
         self.sendString('/1h20000R\r') # Initialize Valve
         self.sendString('/1h20001R\r') # Enable Valve Movement
         # Confirm that this initialization only pushes to waste
-        self.sendString(f'/1h2400{self.bypass_valve}R\r')
+        self.sendString(f'/1h2600{self.bypass_valve}R\r')
         # initialize syringe
         self.sendString('/1h10010R\r') # initialize syringe
+        # critical: Select syringe type
+        self.sendString("/1h21003R\r") # tell computer this is a 8-way valve
+        ## NOTICE: this setting could be reversed when the syringe rebooted.
         # flush buffer
         self.serial.readlines()
         # Define initial pump status
@@ -96,13 +99,13 @@ class APump():
         # valve position is either 'input' or 'output'
         if valvePosition == 'Input':
             #self.sendString('/1IR\r')
-            valveOutput = self.sendString(f'/1h2400{self.input_valve}R\r') # input is at 135
+            valveOutput = self.sendString(f'/1h2600{self.input_valve}R\r') # input is at 135
         elif valvePosition == 'Output':
             #self.sendString('/1OR\r')
-            valveOutput = self.sendString(f'/1h2400{self.output_valve}R\r') # output is at 180
+            valveOutput = self.sendString(f'/1h2600{self.output_valve}R\r') # output is at 180
         elif valvePosition == 'Bypass':
             #self.sendString('/1OR\r')
-            valveOutput = self.sendString(f'/1h2400{self.bypass_valve}R\r') # bypass is at 270
+            valveOutput = self.sendString(f'/1h2600{self.bypass_valve}R\r') # bypass is at 270
         return valveOutput
     
     def setSyringePosition(self, 
@@ -114,15 +117,15 @@ class APump():
         commandString = '/1'
 
         if emptyFirst:
-            commandString += f'h2400{self.bypass_valve}V{int(speed)}A0' # empty speed to 50
+            commandString += f'h2600{self.bypass_valve}V{int(speed)}A0' # empty speed to 50
 
         if valvePosition is not None:
             if valvePosition == 'Input':
-                commandString += f'h2400{self.input_valve}'
+                commandString += f'h2600{self.input_valve}'
             elif valvePosition == 'Bypass':
-                commandString += f'h2400{self.bypass_valve}'
+                commandString += f'h2600{self.bypass_valve}'
             else:
-                commandString += f'h2400{self.output_valve}'
+                commandString += f'h2600{self.output_valve}'
 
         commandString += 'V' + str(int(speed))
         commandString += 'A' + str(int(position))
@@ -130,12 +133,11 @@ class APump():
         self.sendString(commandString + 'R\r')
         return
 
-    # Function to eject liquid into chamber:
-    def PushSyringe(self, speed=50): 
-        self.sendString(f'/1h2400{self.output_valve}V{int(speed)}A0R\r')
-
     def emptySyringe(self, speed=50):
-        self.sendString(f'/1h2400{self.bypass_valve}V{int(speed)}A0R\r')
+        # change valve
+
+
+        self.sendString(f'/1h2600{self.output_valve}V{int(speed)}A0R\r')
 
     def stopSyringe(self):
         self.sendString('/1TR\r')
