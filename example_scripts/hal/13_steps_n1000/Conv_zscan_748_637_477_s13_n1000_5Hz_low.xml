@@ -3,7 +3,7 @@
 	<!--camera settings-->
 	<camera1>
 		<!--exposure time-->
-		<exposure_time type="float">0.10</exposure_time>
+		<exposure_time type="float">0.20</exposure_time>
 		<!--view settings-->
 		<flip_horizontal type="int">0</flip_horizontal>
 		<flip_vertical type="int">0</flip_vertical>
@@ -16,34 +16,22 @@
 	</camera1>
 	<!--film settings-->
 	<film>
-		<filename type="string">mosaic_10x_748_637_545_477_405_s13_n1000_10Hz</filename>
+		<filename type="string">zscan_748_637_477_s13_n1000_5Hz</filename>
 		<acq_mode type="string">fixed_length</acq_mode>
-		<frames type="int">65</frames>
+		<frames type="int">39</frames>
 		<logfile type="string">E:\Data\logs\hal_log.txt</logfile>
 		<auto_increment type="int">1</auto_increment>
-		<auto_shutters type="int">0</auto_shutters>
+		<auto_shutters type="int">1</auto_shutters>
 		<want_bell type="int">1</want_bell>
 		<filetype type="string">.dax</filetype>
 	</film>
 	<!--illumination settings-->
 	<illumination>
-		<default_power type="custom">0.10,0.10,0.10,0.00,0.02,0.00,0.02</default_power>
-		<shutters type="string">shutter_748_637_545_477_405_s13.xml</shutters>
+		<default_power type="custom">0.01,0.01,0.00,0.00,0.01,0.00,0.00</default_power>
+		<shutters type="string">shutter_748_637_477_s13.xml</shutters>
 		<on_off_state type="custom">False,False,False,False,False,False,False</on_off_state>
 		<power_buttons type="custom">[[['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]]]</power_buttons>
 	</illumination>
-
-	<!-- mosiac settings -->
-	<mosaic validate="False">
-		<flip_horizontal type="boolean">True</flip_horizontal>
-		<flip_vertical type="boolean">False</flip_vertical>
-    	<obj1 desc="Objective 1" type="custom">60x,0.107,0.0,0.0</obj1>
-    	<obj2 desc="Objective 2" type="custom">20x,0.324,0.0,0.0</obj2>  
-    	<obj3 desc="Objective 3" type="custom">10x,0.653,0.0,0.0</obj3>  
-		<objective type="string">obj3</objective>
-		<transpose type="boolean">True</transpose>
-	</mosaic>
-	
 	<!--focus lock settings-->
 	<focuslock>
 		<locked>
@@ -54,7 +42,7 @@
 			<offset_threshold type="float">50.0</offset_threshold>
 		</locked>
 		<hardware_z_scan>
-			<z_offsets type="string">-6.50,-6.50,-6.50,-6.50,-6.50,-5.50,-5.50,-5.50,-5.50,-5.50,-4.50,-4.50,-4.50,-4.50,-4.50,-3.50,-3.50,-3.50,-3.50,-3.50,-2.50,-2.50,-2.50,-2.50,-2.50,-1.50,-1.50,-1.50,-1.50,-1.50,-0.50,-0.50,-0.50,-0.50,-0.50,0.50,0.50,0.50,0.50,0.50,1.50,1.50,1.50,1.50,1.50,2.50,2.50,2.50,2.50,2.50,3.50,3.50,3.50,3.50,3.50,4.50,4.50,4.50,4.50,4.50,5.50,5.50,5.50,5.50,5.50</z_offsets>
+			<z_offsets type="string">-6.50,-6.50,-6.50,-5.50,-5.50,-5.50,-4.50,-4.50,-4.50,-3.50,-3.50,-3.50,-2.50,-2.50,-2.50,-1.50,-1.50,-1.50,-0.50,-0.50,-0.50,0.50,0.50,0.50,1.50,1.50,1.50,2.50,2.50,2.50,3.50,3.50,3.50,4.50,4.50,4.50,5.50,5.50,5.50</z_offsets>
 		</hardware_z_scan>
 	</focuslock>
 </settings>

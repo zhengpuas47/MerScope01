@@ -40,7 +40,7 @@
     	<obj1 desc="Objective 1" type="custom">60x,0.107,0.0,0.0</obj1>
     	<obj2 desc="Objective 2" type="custom">20x,0.324,0.0,0.0</obj2>  
     	<obj3 desc="Objective 3" type="custom">10x,0.653,0.0,0.0</obj3>  
-		<objective type="string">obj3</objective>
+		<objective type="string">obj2</objective>
 		<transpose type="boolean">True</transpose>
 	</mosaic>
 	

@@ -37,8 +37,9 @@
 	<mosaic validate="False">
 		<flip_horizontal type="boolean">True</flip_horizontal>
 		<flip_vertical type="boolean">False</flip_vertical>
-		<obj1 type="custom">60x,0.107,0.0,0.0</obj1>
-		<obj2 type="custom">10x,0.642,0.0,0.0</obj2>
+        <obj1 desc="Objective 1" type="custom">60x,0.107,0.0,0.0</obj1>
+        <obj2 desc="Objective 2" type="custom">20x,0.324,0.0,0.0</obj2>  
+        <obj3 desc="Objective 3" type="custom">10x,0.653,0.0,0.0</obj3>  
 		<objective type="string">obj1</objective>
 		<transpose type="boolean">True</transpose>
 	</mosaic>
