@@ -1107,8 +1107,8 @@ class SectionsView(QtWidgets.QWidget):
         #painter.setPen(color)
         #painter.setOpacity(1.0)
         painter.setOpacity(0.2)
-        x_mid = self.width()/2
-        y_mid = self.height()/2
+        x_mid = int(self.width()/2)
+        y_mid = int(self.height()/2)
         painter.drawLine(0, y_mid, self.width(), y_mid)
         painter.drawLine(x_mid, 0, x_mid, self.height())
 
