@@ -434,8 +434,8 @@
       <offset_minimum type="float">0.0</offset_minimum>
       <offset_warning_high type="float">4.0</offset_warning_high>
       <offset_warning_low type="float">1.0</offset_warning_low>	  
-      <sum_maximum type="float">600000.0</sum_maximum>
-      <sum_warning_low type="float">100000.0</sum_warning_low>
+      <sum_maximum type="float">300000.0</sum_maximum>
+      <sum_warning_low type="float">50000.0</sum_warning_low>
       <sum_minimum type="float">0.0</sum_minimum>
     </parameters>
     <background type="int">35000</background>

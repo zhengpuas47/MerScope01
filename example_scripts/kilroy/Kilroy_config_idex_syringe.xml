@@ -837,6 +837,30 @@
       <pump duration = "50">Empty Syringe</pump>
     </protocol>  
 
+    <protocol name = "Prime 19-24">
+      <valve duration = "3">Set Hyb 19</valve>
+      <pump duration = "15">Bypass Take 0.2mL</pump>
+      <pump duration = "10">Empty Syringe</pump>
+      <valve duration = "3">Set Hyb 20</valve>
+      <pump duration = "15">Bypass Take 0.2mL</pump>
+      <pump duration = "10">Empty Syringe</pump>
+      <valve duration = "3">Set Hyb 21</valve>
+      <pump duration = "15">Bypass Take 0.2mL</pump>
+      <pump duration = "10">Empty Syringe</pump>
+      <valve duration = "3">Set Hyb 22</valve>
+      <pump duration = "15">Bypass Take 0.2mL</pump>
+      <pump duration = "10">Empty Syringe</pump>
+      <valve duration = "3">Set Hyb 23</valve>
+      <pump duration = "15">Bypass Take 0.2mL</pump>
+      <pump duration = "10">Empty Syringe</pump>
+      <valve duration = "3">Set Hyb 24</valve>
+      <pump duration = "15">Bypass Take 0.2mL</pump>
+      <pump duration = "10">Empty Syringe</pump>
+      <valve duration = "3">Set Wash</valve>
+      <pump duration = "50">Bypass Take 0.5mL</pump>
+      <pump duration = "50">Empty Syringe</pump>
+    </protocol>  
+
     <protocol name = "Prime common buffers">
       <valve duration = "3">Set Common Readouts</valve>
       <pump duration = "15">Bypass Take 0.2mL</pump>
