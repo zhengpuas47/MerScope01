@@ -8,8 +8,6 @@
 # Jeff Moffitt
 # 2/15/14
 # jeffmoffitt@gmail.com
-#
-# Updated 7/2019 by George Emanuel
 # ----------------------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------------------
@@ -35,8 +33,7 @@ class KilroyProtocols(QtWidgets.QMainWindow):
     def __init__(self,
                  protocol_xml_path = "default_config.xml",
                  command_xml_path = "default_config.xml",
-                 verbose = False,
-                 pumpType='peristaltic'):
+                 verbose = False):
         super(KilroyProtocols, self).__init__()
 
         # Initialize internal attributes
@@ -50,7 +47,6 @@ class KilroyProtocols(QtWidgets.QMainWindow):
         self.status = [-1, -1] # Protocol ID, command ID within protocol
         self.issued_command = []
         self.received_message = None
-        self.pumpType = pumpType
 
         print("----------------------------------------------------------------------")
         
@@ -63,8 +59,7 @@ class KilroyProtocols(QtWidgets.QMainWindow):
 
         # Create instance of PumpCommands class
         self.pumpCommands = PumpCommands(xml_file_path = self.command_xml_path,
-                                         verbose = self.verbose,
-                                         pumpType = pumpType)
+                                         verbose = self.verbose)
 
         # Connect pump commands issue signal
         self.pumpCommands.change_command_signal.connect(self.issuePumpCommand)
@@ -479,7 +474,8 @@ class KilroyProtocols(QtWidgets.QMainWindow):
         
         # Unselect all
         self.protocolDetailsList.setCurrentRow(0)
-        self.protocolDetailsList.item(0).setSelected(False)
+        if self.protocolDetailsList.item(0) is not None:
+            self.protocolDetailsList.item(0).setSelected(False)
     
         # Stop timers
         self.poll_elapsed_time_timer.stop()

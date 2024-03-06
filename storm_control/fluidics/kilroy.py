@@ -1,11 +1,11 @@
 #!/usr/bin/python
 # ----------------------------------------------------------------------------------------
 # A master control class to implemented a series of automated flow protocols
-# using a daisy chained valve system (and eventually syringe pumps)
+# using a daisy chained valve system and peristaltic or syringe pumps
 # ----------------------------------------------------------------------------------------
 # Jeff Moffitt
 # 12/28/13
-# jeffmoffitt@gmail.com
+# jeffrey.moffitt@childrens.harvard.edu
 # ----------------------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------------------
@@ -14,12 +14,9 @@
 import sys
 import os
 import time
-import sys
-sys.path.append(r"..\..")
 from PyQt5 import QtCore, QtGui, QtWidgets
 from storm_control.fluidics.valves.valveChain import ValveChain
-from storm_control.fluidics.pumps.pumpControl import PeristalticPumpControl
-from storm_control.fluidics.pumps.pumpControl import SyringePumpControl
+import storm_control.fluidics.pumps.pumpControl as pumpControl
 from storm_control.fluidics.kilroyProtocols import KilroyProtocols
 from storm_control.sc_library.tcpServer import TCPServer
 import storm_control.sc_library.parameters as params
@@ -33,21 +30,8 @@ class Kilroy(QtWidgets.QMainWindow):
 
         # Parse parameters into internal attributes
         self.verbose = parameters.get("verbose")
-        self.valve_com_port = parameters.get("valves_com_port")
         self.tcp_port = parameters.get("tcp_port")
-        self.pump_com_port = parameters.get("pump_com_port")
-        self.pump_ID = parameters.get("pump_ID")
-        # pump type
-        if not parameters.has("pump_type"):
-            self.pump_type = 'peristaltic'
-        else:
-            self.pump_type = parameters.get('pump_type')
-
-        if not parameters.has("num_simulated_valves"):
-            self.num_simulated_valves = 0
-        else:
-            self.num_simulated_valves = parameters.get("num_simulated_valves")
-
+        
         if not parameters.has("valve_type"):
             self.valve_type = 'Hamilton'
         else:
@@ -72,22 +56,23 @@ class Kilroy(QtWidgets.QMainWindow):
         self.received_message = None
         
         # Create ValveChain instance
-        self.valveChain = ValveChain(com_port = self.valve_com_port,
-                                     num_simulated_valves = self.num_simulated_valves,
-                                     valve_type=self.valve_type,
-                                     verbose = self.verbose)
+        self.valveChain = ValveChain(parameters = parameters)
 
         # Create PumpControl instance
-        if self.pump_type == 'peristaltic':
-            self.pumpControl = PeristalticPumpControl(parameters=parameters)
-        elif self.pump_type == 'syringe':
-            self.pumpControl = SyringePumpControl(parameters=parameters)
-            
+        pump_type = parameters.get("pump_type", "peristaltic")
+        
+        if pump_type == "peristaltic":
+            self.pumpControl = pumpControl.PeristalticPumpControl(parameters = parameters)
+        elif pump_type == "syringe":
+            self.pumpControl = pumpControl.SyringePumpControl(parameters = parameters)
+        else:
+            print("Unrecognized pump_type requested")
+            assert False
+                                       
         # Create KilroyProtocols instance and connect signals
         self.kilroyProtocols = KilroyProtocols(protocol_xml_path = self.protocols_file,
                                                command_xml_path = self.commands_file,
-                                               verbose = self.verbose,
-                                               pumpType = self.pump_type)
+                                               verbose = self.verbose)
 
         self.kilroyProtocols.command_ready_signal.connect(self.sendCommand)
         self.kilroyProtocols.status_change_signal.connect(self.handleProtocolStatusChange)
@@ -102,6 +87,8 @@ class Kilroy(QtWidgets.QMainWindow):
 
         # Create GUI
         self.createGUI()
+        
+        # Update protocols
 
     # ----------------------------------------------------------------------------------------
     # Close
@@ -172,8 +159,6 @@ class Kilroy(QtWidgets.QMainWindow):
     # ----------------------------------------------------------------------------------------
     def sendCommand(self):
         command_data = self.kilroyProtocols.getCurrentCommand()
-        print("**", command_data)
-
         if command_data[0] == "valve":
             self.valveChain.receiveCommand(command_data[1])
         elif command_data[0] == "pump":
@@ -224,6 +209,11 @@ class StandAlone(QtWidgets.QMainWindow):
         valve_menu = menubar.addMenu("&Valves")
         for menu_item in self.kilroy.valveChain.menu_items[0]:
             valve_menu.addAction(menu_item)
+            
+        if not self.kilroy.pumpControl.menu_items is None:
+            pump_menu = menubar.addMenu("&Pump")
+            for menu_item in self.kilroy.pumpControl.menu_items[0]:
+                pump_menu.addAction(menu_item)
 
     # ----------------------------------------------------------------------------------------
     # Handle dragEnterEvent
