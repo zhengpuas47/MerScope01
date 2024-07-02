@@ -175,6 +175,9 @@ class ValveCommands(QtWidgets.QMainWindow):
         if not (self.num_valves>0):
             print("Number of valves not specified")
         
+        print("Number of valves: " + str(self.num_valves))
+        print
+
         # Load commands
         for valve_command in self.kilroy_configuration.findall("valve_commands"):
             command_list = valve_command.findall("valve_cmd")

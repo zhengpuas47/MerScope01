@@ -66,5 +66,6 @@ class Ui_QtValveControlWidget(object):
         self.rotationDirectionLabel.setText(_translate("QtValveControlWidget", "Rotation Direction"))
         self.desiredRotationComboBox.setItemText(0, _translate("QtValveControlWidget", "Clockwise"))
         self.desiredRotationComboBox.setItemText(1, _translate("QtValveControlWidget", "Counter Clockwise"))
+        self.desiredRotationComboBox.setItemText(2, _translate("QtValveControlWidget", "Shortest Path"))
         self.valveStatusLabel.setText(_translate("QtValveControlWidget", "Valve Status"))
 

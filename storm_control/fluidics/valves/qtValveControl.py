@@ -31,7 +31,7 @@ class QtValveControl(QtWidgets.QWidget):
                  configuration = "Default",
                  port_names = ("Port 1", "Port 2"),
                  desired_port = 0,
-                 rotation_directions = ("Clockwise", "Counter Clockwise"),
+                 rotation_directions = ("Clockwise", "Counter Clockwise", "Shortest Path"),
                  desired_rotation = 0,
                  status = ("Undefined", False),
                  error = ("None", False),
