@@ -71,7 +71,7 @@ class GenericPumpControl(QtWidgets.QWidget):
         try:
             self.updateStatus(self.pump.getStatus())
         except:
-            time.sleep(0.2)
+            time.sleep(0.25)
             print("-> Error in polling pump status, redo polling")
             self.updateStatus(self.pump.getStatus())
 
