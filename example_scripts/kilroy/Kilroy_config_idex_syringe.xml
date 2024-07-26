@@ -132,10 +132,10 @@
        <pump_config position = "1000" speed = "33" direction = "Input"></pump_config>
      </pump_cmd>
      <pump_cmd name = "Take 1.3mL">
-       <pump_config position = "1300" speed = "33" direction = "Input"></pump_config>
+       <pump_config position = "1500" speed = "33" direction = "Input"></pump_config>
      </pump_cmd>
      <pump_cmd name = "Keep 1.2mL">
-       <pump_config position = "1200" speed = "33" direction = "Bypass"></pump_config>
+       <pump_config position = "1350" speed = "33" direction = "Bypass"></pump_config>
      </pump_cmd>
      <pump_cmd name = "Bypass Take 0.2mL">
        <pump_config position = "200" speed = "50" direction = "Bypass"></pump_config>
@@ -162,8 +162,8 @@
 
     <protocol name = "Flow Common Readouts">
       <valve duration = "3">Set Common Readouts</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "20">Take 0.2mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "20">Take 0.2mL</pump>
@@ -171,8 +171,8 @@
     </protocol>
     <protocol name = "Flow Wash">
       <valve duration = "3">Set Wash</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "20">Take 0.2mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "20">Take 0.2mL</pump>
@@ -180,8 +180,8 @@
     </protocol>
     <protocol name = "Flow 2xSSC">
       <valve duration = "3">Set 2xSSC</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "20">Take 0.2mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "20">Take 0.2mL</pump>
@@ -189,7 +189,7 @@
     </protocol>
     <protocol name = "Flow TCEP">
       <valve duration = "3">Set TCEP</valve>
-      <pump duration = "90">Take 1.3mL</pump>
+      <pump duration = "100">Take 1.3mL</pump>
       <pump duration = "275">Empty Syringe</pump>
       <pump duration = "20">Take 0.2mL</pump>
       <pump duration = "140">Empty Syringe</pump>
@@ -198,8 +198,8 @@
     </protocol>
     <protocol name = "Flow Imaging">
       <valve duration = "3">Set Imaging</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "20">Take 0.2mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "20">Take 0.2mL</pump>
@@ -209,8 +209,8 @@
     <!-- 1.6 ml for unique hybridization -->
     <protocol name = "Flow Hyb 1">
       <valve duration = "3">Set Hyb 1</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -218,8 +218,8 @@
     </protocol>
     <protocol name = "Flow Hyb 2">
       <valve duration = "3">Set Hyb 2</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -227,8 +227,8 @@
     </protocol>
     <protocol name = "Flow Hyb 3">
       <valve duration = "3">Set Hyb 3</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -236,8 +236,8 @@
     </protocol>
     <protocol name = "Flow Hyb 4">
       <valve duration = "3">Set Hyb 4</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -245,8 +245,8 @@
     </protocol>
     <protocol name = "Flow Hyb 5">
       <valve duration = "3">Set Hyb 5</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -254,8 +254,8 @@
     </protocol>
     <protocol name = "Flow Hyb 6">
       <valve duration = "3">Set Hyb 6</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -263,8 +263,8 @@
     </protocol>
     <protocol name = "Flow Hyb 7">
       <valve duration = "3">Set Hyb 7</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -272,8 +272,8 @@
     </protocol>
     <protocol name = "Flow Hyb 8">
       <valve duration = "3">Set Hyb 8</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -281,8 +281,8 @@
     </protocol>
     <protocol name = "Flow Hyb 9">
       <valve duration = "3">Set Hyb 9</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -290,8 +290,8 @@
     </protocol>
     <protocol name = "Flow Hyb 10">
       <valve duration = "3">Set Hyb 10</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -299,8 +299,8 @@
     </protocol>
     <protocol name = "Flow Hyb 11">
       <valve duration = "3">Set Hyb 11</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -308,8 +308,8 @@
     </protocol>
     <protocol name = "Flow Hyb 12">
       <valve duration = "3">Set Hyb 12</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -317,8 +317,8 @@
     </protocol>
     <protocol name = "Flow Hyb 13">
       <valve duration = "3">Set Hyb 13</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -326,8 +326,8 @@
     </protocol>
     <protocol name = "Flow Hyb 14">
       <valve duration = "3">Set Hyb 14</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -335,8 +335,8 @@
     </protocol>
     <protocol name = "Flow Hyb 15">
       <valve duration = "3">Set Hyb 15</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -344,8 +344,8 @@
     </protocol>
     <protocol name = "Flow Hyb 16">
       <valve duration = "3">Set Hyb 16</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -353,8 +353,8 @@
     </protocol>
     <protocol name = "Flow Hyb 17">
       <valve duration = "3">Set Hyb 17</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -362,8 +362,8 @@
     </protocol>
     <protocol name = "Flow Hyb 18">
       <valve duration = "3">Set Hyb 18</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -371,8 +371,8 @@
     </protocol>
     <protocol name = "Flow Hyb 19">
       <valve duration = "3">Set Hyb 19</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -380,8 +380,8 @@
     </protocol>
     <protocol name = "Flow Hyb 20">
       <valve duration = "3">Set Hyb 20</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -389,8 +389,8 @@
     </protocol>
     <protocol name = "Flow Hyb 21">
       <valve duration = "3">Set Hyb 21</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -398,8 +398,8 @@
     </protocol>
     <protocol name = "Flow Hyb 22">
       <valve duration = "3">Set Hyb 22</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -407,8 +407,8 @@
     </protocol>
     <protocol name = "Flow Hyb 23">
       <valve duration = "3">Set Hyb 23</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -416,8 +416,8 @@
     </protocol>
     <protocol name = "Flow Hyb 24">
       <valve duration = "3">Set Hyb 24</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -425,8 +425,8 @@
     </protocol>
     <protocol name = "Flow Hyb 25">
       <valve duration = "3">Set Hyb 25</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -434,8 +434,8 @@
     </protocol>
     <protocol name = "Flow Hyb 26">
       <valve duration = "3">Set Hyb 26</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -443,8 +443,8 @@
     </protocol>
     <protocol name = "Flow Hyb 27">
       <valve duration = "3">Set Hyb 27</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -452,8 +452,8 @@
     </protocol>
     <protocol name = "Flow Hyb 28">
       <valve duration = "3">Set Hyb 28</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -461,8 +461,8 @@
     </protocol>
     <protocol name = "Flow Hyb 29">
       <valve duration = "3">Set Hyb 29</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -470,8 +470,8 @@
     </protocol>
     <protocol name = "Flow Hyb 30">
       <valve duration = "3">Set Hyb 30</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -479,8 +479,8 @@
     </protocol>
     <protocol name = "Flow Hyb 31">
       <valve duration = "3">Set Hyb 31</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -488,8 +488,8 @@
     </protocol>
     <protocol name = "Flow Hyb 32">
       <valve duration = "3">Set Hyb 32</valve>
-      <pump duration = "90">Take 1.3mL</pump>
-      <pump duration = "75">Empty Syringe</pump>
+      <pump duration = "100">Take 1.3mL</pump>
+      <pump duration = "90">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
       <pump duration = "40">Empty Syringe</pump>
       <pump duration = "10">Take 0.1mL</pump>
@@ -700,6 +700,21 @@
       <pump duration = "45">Bypass Take 1mL</pump>
       <pump duration = "45">Empty Syringe</pump>
       <valve duration = "3">Set Hyb 28</valve>
+      <pump duration = "45">Bypass Take 1mL</pump>
+      <pump duration = "45">Empty Syringe</pump>
+    </protocol>
+
+    <protocol name = "Cleanup 29-32">
+      <valve duration = "3">Set Hyb 29</valve>
+      <pump duration = "45">Bypass Take 1mL</pump>
+      <pump duration = "45">Empty Syringe</pump>
+      <valve duration = "3">Set Hyb 30</valve>
+      <pump duration = "45">Bypass Take 1mL</pump>
+      <pump duration = "45">Empty Syringe</pump>
+      <valve duration = "3">Set Hyb 31</valve>
+      <pump duration = "45">Bypass Take 1mL</pump>
+      <pump duration = "45">Empty Syringe</pump>
+      <valve duration = "3">Set Hyb 32</valve>
       <pump duration = "45">Bypass Take 1mL</pump>
       <pump duration = "45">Empty Syringe</pump>
     </protocol>

@@ -1,0 +1,48 @@
+<?xml version="1.0" ?>
+<settings>
+	<!--camera settings-->
+	<camera1>
+		<!--exposure time-->
+		<exposure_time type="float">0.07</exposure_time>
+		<!--view settings-->
+		<flip_horizontal type="int">0</flip_horizontal>
+		<flip_vertical type="int">0</flip_vertical>
+		<transpose type="int">0</transpose>
+		<scalemax type="int">20000</scalemax>
+		<scalemin type="int">200</scalemin>
+		<max_intensity type="int">65536</max_intensity>
+		<colortable type="string">ramp_sat.ctbl</colortable>
+		<sync type="int">0</sync>
+	</camera1>
+	<!--film settings-->
+	<film>
+		<filename type="string">zscan_748_637_545_477_405_s45_n600_15Hz</filename>
+		<acq_mode type="string">fixed_length</acq_mode>
+		<frames type="int">225</frames>
+		<logfile type="string">E:\Data\logs\hal_log.txt</logfile>
+		<auto_increment type="int">1</auto_increment>
+		<auto_shutters type="int">1</auto_shutters>
+		<want_bell type="int">1</want_bell>
+		<filetype type="string">.dax</filetype>
+	</film>
+	<!--illumination settings-->
+	<illumination>
+		<default_power type="custom">0.15,0.02,0.15,0.00,0.03,0.00,0.004</default_power>
+		<shutters type="string">shutter_748_637_545_477_405_s45.xml</shutters>
+		<on_off_state type="custom">False,False,False,False,False,False,False</on_off_state>
+		<power_buttons type="custom">[[['Max', 1.0], ['Low', 0.01]], [['Max', 1.0], ['Low', 0.01]], [['Max', 1.0], ['Low', 0.01]], [['Max', 1.0], ['Low', 0.01]], [['Max', 1.0], ['Low', 0.01]], [['Max', 1.0], ['Low', 0.01]], [['Max', 1.0], ['Low', 0.01]]]</power_buttons>
+	</illumination>
+	<!--focus lock settings-->
+	<focuslock>
+		<locked>
+			<buffer_length type="int">5</buffer_length>
+			<lock_gain type="float">0.1</lock_gain>
+			<lock_gain_max type="float">0.1</lock_gain_max>
+			<minimum_sum type="float">-1.0</minimum_sum>
+			<offset_threshold type="float">50.0</offset_threshold>
+		</locked>
+		<hardware_z_scan>
+			<z_offsets type="string">-13.50,-13.50,-13.50,-13.50,-13.50,-12.90,-12.90,-12.90,-12.90,-12.90,-12.30,-12.30,-12.30,-12.30,-12.30,-11.70,-11.70,-11.70,-11.70,-11.70,-11.10,-11.10,-11.10,-11.10,-11.10,-10.50,-10.50,-10.50,-10.50,-10.50,-9.90,-9.90,-9.90,-9.90,-9.90,-9.30,-9.30,-9.30,-9.30,-9.30,-8.70,-8.70,-8.70,-8.70,-8.70,-8.10,-8.10,-8.10,-8.10,-8.10,-7.50,-7.50,-7.50,-7.50,-7.50,-6.90,-6.90,-6.90,-6.90,-6.90,-6.30,-6.30,-6.30,-6.30,-6.30,-5.70,-5.70,-5.70,-5.70,-5.70,-5.10,-5.10,-5.10,-5.10,-5.10,-4.50,-4.50,-4.50,-4.50,-4.50,-3.90,-3.90,-3.90,-3.90,-3.90,-3.30,-3.30,-3.30,-3.30,-3.30,-2.70,-2.70,-2.70,-2.70,-2.70,-2.10,-2.10,-2.10,-2.10,-2.10,-1.50,-1.50,-1.50,-1.50,-1.50,-0.90,-0.90,-0.90,-0.90,-0.90,-0.30,-0.30,-0.30,-0.30,-0.30,0.30,0.30,0.30,0.30,0.30,0.90,0.90,0.90,0.90,0.90,1.50,1.50,1.50,1.50,1.50,2.10,2.10,2.10,2.10,2.10,2.70,2.70,2.70,2.70,2.70,3.30,3.30,3.30,3.30,3.30,3.90,3.90,3.90,3.90,3.90,4.50,4.50,4.50,4.50,4.50,5.10,5.10,5.10,5.10,5.10,5.70,5.70,5.70,5.70,5.70,6.30,6.30,6.30,6.30,6.30,6.90,6.90,6.90,6.90,6.90,7.50,7.50,7.50,7.50,7.50,8.10,8.10,8.10,8.10,8.10,8.70,8.70,8.70,8.70,8.70,9.30,9.30,9.30,9.30,9.30,9.90,9.90,9.90,9.90,9.90,10.50,10.50,10.50,10.50,10.50,11.10,11.10,11.10,11.10,11.10,11.70,11.70,11.70,11.70,11.70,12.30,12.30,12.30,12.30,12.30,12.90,12.90,12.90,12.90,12.90</z_offsets>
+		</hardware_z_scan>
+	</focuslock>
+</settings>

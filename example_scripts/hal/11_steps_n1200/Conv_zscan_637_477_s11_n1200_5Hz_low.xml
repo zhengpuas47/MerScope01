@@ -27,7 +27,7 @@
 	</film>
 	<!--illumination settings-->
 	<illumination>
-		<default_power type="custom">0.00,0.006,0.00,0.00,0.01,0.00,0.00</default_power>
+		<default_power type="custom">0.00,0.004,0.00,0.00,0.01,0.00,0.00</default_power>
 		<shutters type="string">shutter_637_477_s11.xml</shutters>
 		<on_off_state type="custom">False,False,False,False,False,False,False</on_off_state>
 		<power_buttons type="custom">[[['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]]]</power_buttons>

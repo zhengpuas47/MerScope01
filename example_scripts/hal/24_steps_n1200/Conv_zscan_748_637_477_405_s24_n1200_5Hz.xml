@@ -3,7 +3,7 @@
 	<!--camera settings-->
 	<camera1>
 		<!--exposure time-->
-		<exposure_time type="float">0.10</exposure_time>
+		<exposure_time type="float">0.20</exposure_time>
 		<!--view settings-->
 		<flip_horizontal type="int">0</flip_horizontal>
 		<flip_vertical type="int">0</flip_vertical>
@@ -16,9 +16,9 @@
 	</camera1>
 	<!--film settings-->
 	<film>
-		<filename type="string">zscan_637_405_s11_n1200_10Hz</filename>
+		<filename type="string">zscan_748_637_477_405_s24_n1200_5Hz</filename>
 		<acq_mode type="string">fixed_length</acq_mode>
-		<frames type="int">22</frames>
+		<frames type="int">96</frames>
 		<logfile type="string">E:\Data\logs\hal_log.txt</logfile>
 		<auto_increment type="int">1</auto_increment>
 		<auto_shutters type="int">1</auto_shutters>
@@ -27,10 +27,10 @@
 	</film>
 	<!--illumination settings-->
 	<illumination>
-		<default_power type="custom">0.00,0.005,0.00,0.00,0.00,0.00,0.004</default_power>
-		<shutters type="string">shutter_637_405_s11.xml</shutters>
+		<default_power type="custom">0.800,0.600,0.000,0.000,0.010,0.000,0.004</default_power>
+		<shutters type="string">shutter_748_637_477_405_s24.xml</shutters>
 		<on_off_state type="custom">False,False,False,False,False,False,False</on_off_state>
-		<power_buttons type="custom">[[['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]], [['Max', 1.0], ['Low', 0.02]]]</power_buttons>
+		<power_buttons type="custom">[[['Max', 1.0], ['Low', 0.01]], [['Max', 1.0], ['Low', 0.01]], [['Max', 1.0], ['Low', 0.01]], [['Max', 1.0], ['Low', 0.01]], [['Max', 1.0], ['Low', 0.01]], [['Max', 1.0], ['Low', 0.01]], [['Max', 1.0], ['Low', 0.01]]]</power_buttons>
 	</illumination>
 	<!--focus lock settings-->
 	<focuslock>
@@ -42,7 +42,7 @@
 			<offset_threshold type="float">50.0</offset_threshold>
 		</locked>
 		<hardware_z_scan>
-			<z_offsets type="string">-6.60,-6.60,-5.40,-5.40,-4.20,-4.20,-3.00,-3.00,-1.80,-1.80,-0.60,-0.60,0.60,0.60,1.80,1.80,3.00,3.00,4.20,4.20,5.40,5.40</z_offsets>
+			<z_offsets type="string">-14.40,-14.40,-14.40,-14.40,-13.20,-13.20,-13.20,-13.20,-12.00,-12.00,-12.00,-12.00,-10.80,-10.80,-10.80,-10.80,-9.60,-9.60,-9.60,-9.60,-8.40,-8.40,-8.40,-8.40,-7.20,-7.20,-7.20,-7.20,-6.00,-6.00,-6.00,-6.00,-4.80,-4.80,-4.80,-4.80,-3.60,-3.60,-3.60,-3.60,-2.40,-2.40,-2.40,-2.40,-1.20,-1.20,-1.20,-1.20,0.00,0.00,0.00,0.00,1.20,1.20,1.20,1.20,2.40,2.40,2.40,2.40,3.60,3.60,3.60,3.60,4.80,4.80,4.80,4.80,6.00,6.00,6.00,6.00,7.20,7.20,7.20,7.20,8.40,8.40,8.40,8.40,9.60,9.60,9.60,9.60,10.80,10.80,10.80,10.80,12.00,12.00,12.00,12.00,13.20,13.20,13.20,13.20</z_offsets>
 		</hardware_z_scan>
 	</focuslock>
 </settings>
