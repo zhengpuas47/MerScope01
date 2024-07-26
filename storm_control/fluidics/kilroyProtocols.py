@@ -36,8 +36,7 @@ class KilroyProtocols(QtWidgets.QMainWindow):
     def __init__(self,
                  protocol_xml_path = "default_config.xml",
                  command_xml_path = "default_config.xml",
-                 verbose = False,
-                 pumpType='peristaltic'):
+                 verbose = False):
         super(KilroyProtocols, self).__init__()
 
         # Initialize internal attributes

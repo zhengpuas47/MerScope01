@@ -1,11 +1,11 @@
 #!/usr/bin/python
 # ----------------------------------------------------------------------------------------
 # A master control class to implemented a series of automated flow protocols
-# using a daisy chained valve system (and eventually syringe pumps)
+# using a daisy chained valve system and peristaltic or syringe pumps
 # ----------------------------------------------------------------------------------------
 # Jeff Moffitt
 # 12/28/13
-# jeffmoffitt@gmail.com
+# jeffrey.moffitt@childrens.harvard.edu
 # ----------------------------------------------------------------------------------------
 
 # ----------------------------------------------------------------------------------------
@@ -14,7 +14,6 @@
 import sys
 import os
 import time
-import sys
 sys.path.append(r"..\..")
 from PyQt5 import QtCore, QtGui, QtWidgets
 from storm_control.fluidics.valves.valveChain import ValveChain
@@ -32,7 +31,6 @@ class Kilroy(QtWidgets.QMainWindow):
 
         # Parse parameters into internal attributes
         self.verbose = parameters.get("verbose")
-        self.valve_com_port = parameters.get("valves_com_port")
         self.tcp_port = parameters.get("tcp_port")
         self.pump_com_port = parameters.get("pump_com_port")
         self.pump_ID = parameters.get("pump_ID")
@@ -85,8 +83,7 @@ class Kilroy(QtWidgets.QMainWindow):
         # Create KilroyProtocols instance and connect signals
         self.kilroyProtocols = KilroyProtocols(protocol_xml_path = self.protocols_file,
                                                command_xml_path = self.commands_file,
-                                               verbose = self.verbose,
-                                               pumpType = self.pump_type)
+                                               verbose = self.verbose, )
 
         self.kilroyProtocols.command_ready_signal.connect(self.sendCommand)
         self.kilroyProtocols.status_change_signal.connect(self.handleProtocolStatusChange)
